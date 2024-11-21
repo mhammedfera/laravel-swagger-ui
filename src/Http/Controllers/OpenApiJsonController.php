@@ -57,7 +57,7 @@ class OpenApiJsonController
         }
 
         $json['servers'] = [
-            ['url' => config('app.url')],
+            ['url' => config('swagger-ui.server_url', config('app.url'))],
         ];
 
         return $json;
