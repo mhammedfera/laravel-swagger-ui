@@ -39,6 +39,7 @@ class OpenApiRouteTest extends TestCase
     {
         config()->set('swagger-ui.files.0.versions', ['v1' => $openApiFile]);
         config()->set('swagger-ui.files.0.modify_file', true);
+        config()->set('swagger-ui.files.0.server_url', null);
         config()->set('app.url', 'http://foo.bar');
 
         $this->get('swagger/v1')
@@ -57,7 +58,7 @@ class OpenApiRouteTest extends TestCase
         config()->set('app.url', 'http://foo.bar');
         config()->set('swagger-ui.files.0.versions', ['v1' => $openApiFile]);
         config()->set('swagger-ui.files.0.modify_file', true);
-        config()->set('swagger-ui.server_url', 'http://foo.bar/api');
+        config()->set('swagger-ui.files.0.server_url', 'http://foo.bar/api');
 
         $this->get('swagger/v1')
             ->assertStatus(200)
