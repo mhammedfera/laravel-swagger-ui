@@ -46,9 +46,9 @@ return [
             'modify_file' => true,
 
             /*
-             * The server URL configuration for the swagger file. Defaults to the app URL.
+             * The server URL configuration for the swagger file.
              */
-            'server_url' => config('app.url'),
+            'server_url' => env('APP_URL'),
 
             /*
              * The oauth configuration for the swagger file.
