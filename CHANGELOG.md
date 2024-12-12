@@ -2,6 +2,11 @@
 
 All notable changes to `laravel-swagger-ui` will be documented in this file
 
+## 1.1.0 - 2024-12-12
+
+- Added: PHP 8.4 support ([#39](https://github.com/wotzebra/laravel-swagger-ui/pull/39))
+- Added: Option to set the server url that will be used in the swagger file ([#38](https://github.com/wotzebra/laravel-swagger-ui/pull/38))
+
 ## 1.0.0 - 2024-09-26
 
 - Changed: Change namespace from 'NextApps' to 'Wotz' ([#36](https://github.com/wotzebra/laravel-swagger-ui/pull/36))
