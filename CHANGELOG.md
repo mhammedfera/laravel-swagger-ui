@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-swagger-ui` will be documented in this file
 
+## 1.2.0 - 2025-03-05
+
+- Added: Laravel v12 support ([#42](https://github.com/wotzebra/laravel-swagger-ui/pull/42))
+
 ## 1.1.0 - 2024-12-12
 
 - Added: PHP 8.4 support ([#39](https://github.com/wotzebra/laravel-swagger-ui/pull/39))
