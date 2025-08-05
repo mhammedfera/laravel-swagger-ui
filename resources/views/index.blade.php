@@ -46,6 +46,18 @@
                     ],
                     "urls.primaryName": "{{ $data['default'] }}",
                     dom_id: '#swagger-ui',
+                    requestInterceptor: (req) => {
+                        // Example: Add CSRF token from cookie to header
+                        const token = getCookieValue('XSRF-TOKEN');
+                        if (token) {
+                        req.headers['X-XSRF-TOKEN'] = decodeURIComponent(token);
+                        }
+
+                        // Always send cookies (important for Laravel Sanctum session-based auth)
+                        req.credentials = 'include';
+
+                        return req;
+                    },
                     deepLinking: true,
                     presets: [
                         SwaggerUIBundle.presets.apis,
@@ -63,6 +75,11 @@
                     clientSecret: '{{ $data['oauth']['client_secret'] }}',
                 });
             };
+
+            function getCookieValue(name) {
+                const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+                return match ? match[2] : null;
+            }
         </script>
     </body>
 </html>
